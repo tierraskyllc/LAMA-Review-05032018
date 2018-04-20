@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BarcodeScanner ,BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner'; // I removed BarcodeScannerOptions from here //
 
 /**
  * Generated class for the EventcheckinPage page.

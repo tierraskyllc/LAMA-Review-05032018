@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, ViewController, NavParams } from 'ionic-angular';
+import { NavController, ViewController, NavParams } from 'ionic-angular'; // I removed IonicPage fom here //
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 import 'rxjs/Rx';

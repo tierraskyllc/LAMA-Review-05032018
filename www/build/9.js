@@ -57,7 +57,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
+ // I removed BarcodeScannerOptions from here //
 /**
  * Generated class for the EventcheckinPage page.
  *
