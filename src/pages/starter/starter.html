@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar>
+  	<button ion-button menuToggle>
+  		<ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      L.A.M.A.
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <table width="100%" height="100%">
+    <tr width="100%" height="100%">
+      <td width="100%" height="100%" align="center">
+        <div class="container">
+
+          <ion-card-content text-wrap>
+            <!---->
+            <div class="home-hello">
+                <img src="/assets/imgs/thelffl.png"/>
+                <div class="hello-title">
+                  <h1>International & National</h1>
+                  Motorcycle Association
+                </div>
+              </div>
+            <!---->
+           <form [formGroup]="signInForm">
+                  <ion-label class="invalidmsg">{{data.error}}</ion-label>
+                  <ion-item [class.invalid]="!signInForm.controls.username.valid && (signInForm.controls.username.dirty || submitAttempt)">
+                      <ion-label fixed>Email</ion-label>
+                      <ion-input formControlName="username" type="text"></ion-input>
+                  </ion-item>
+                  <!--p class="invalidmsg" *ngIf="!signUpForm.controls.username.valid  && (signUpForm.controls.username.dirty || submitAttempt)">Please enter a valid Email Address.</p-->
+                  <ion-item [class.invalid]="!signInForm.controls.password.valid && (signInForm.controls.password.dirty || submitAttempt)">
+                      <ion-label fixed>Password</ion-label>
+                      <ion-input formControlName="password" type="password"></ion-input>
+                  </ion-item>
+                  <!--p class="invalidmsg" *ngIf="!signUpForm.controls.password.valid  && (signUpForm.controls.password.dirty || submitAttempt)">Please enter a valid Password.</p-->
+                <table width="100%">
+                  <tr width="100%">
+                    <td width="100%" align="center">
+                      <button ion-button small round (click)="login()">Sign In</button>
+                    </td>
+                  </tr>
+                  <tr width="100%">
+                    <td width="100%" style="text-align: center;">
+                      <button ion-button clear (click)="signup()">Click here to SIGN UP</button>
+                    </td>
+                  </tr>
+                </table>
+            </form>
+            <!--Session ID: {{shareProvider.sessionid}}
+            Username: {{shareProvider.username}}<br>
+            First Name: {{shareProvider.firstname}}<br>
+            Last Name: {{shareProvider.lastname}}<br>-->
+            <!--Password: {{signUpForm.controls['password'].value}}<br>
+            Confirm Password: {{signUpForm.controls['confirmpasswd'].value}}<br>
+            Selection: {{signUpForm.controls['selection'].value}}<br>
+            Region: {{signUpForm.controls['region'].value}}<br>
+            State: {{signUpForm.controls['state'].value}}<br>
+            Chapter: {{signUpForm.controls['chapter'].value}}<br>
+            {{data.response}}
+            Is form valid?: {{signUpForm.valid}}-->
+          </ion-card-content>
+        </div>
+      </td>
+    </tr>
+  </table>
+</ion-content>

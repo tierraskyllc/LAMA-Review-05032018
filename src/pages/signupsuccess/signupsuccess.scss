@@ -1,0 +1,22 @@
+page-signupsuccess {
+
+    p.highlightedmsg {
+    	color: #EF5B31;
+    }
+
+    div.container {
+    	display: table-cell;
+    	vertical-align: middle;
+        padding: 5px;
+    }
+
+    ion-card-content {
+        border-radius: 30px !important;
+        border: 3px solid #FAFAFA;
+    }
+
+    .item input {
+        border: 2px solid #E3E3E3;
+    }
+
+}

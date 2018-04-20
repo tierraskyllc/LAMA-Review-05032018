@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+  	<button ion-button menuToggle>
+  		<ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      L.A.M.A. Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <table width="100%">
+    <tr width="100%">
+      <td align="center" valign="top" colspan="2">
+        <h4>FirstName LastName</h4>
+      </td>
+    </tr>
+    <tr width="100%">
+      <td align="center" valign="top" colspan="2">
+        Membership Status<br>(Active/Expired/Revoked)
+      </td>
+    </tr>
+    <tr style="height: 3em;">
+      <td>
+      </td>
+    </tr>
+    <tr width="100%">
+      <td valign="top" width="50%" align="right">
+        <div><img src="https://dd5394a0b8ca8e97ba29-abf76f3d91a2125517d6c7c409f095c7.ssl.cf1.rackcdn.com/content/common/Models/2018/cc28348a-ba9d-4415-be78-e2710c61cbd2.png"\></div>
+      </td>
+      <td valign="top" width="50%" align="left">
+        <div>
+          <!--img src="https://i.ytimg.com/vi/Q6xybdaV3xs/maxresdefault.jpg"\-->
+          <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+          <!--jquery('#qrcode').qrcode("this plugin is great");-->
+          <qr-code [value]="'All QR Code data goes here!'" [size]="150"></qr-code>
+        </div>
+      </td>
+    </tr>
+  </table>
+</ion-content>

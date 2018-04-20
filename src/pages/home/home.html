@@ -1,0 +1,23 @@
+<ion-split-pane>
+  <!-- side menu  -->
+  <ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <button ion-item (click)="open('AboutPage')" menuClose>About LAMA</button>
+        <button ion-item (click)="open('StarterPage')" menuClose>Login</button>
+        <button ion-item (click)="open('RegisterPage')" menuClose>Sign Up</button>
+        <button ion-item (click)="open('EventsPage')" menuClose>Events</button>
+        <button *ngIf="shareProvider.role == 'admin'" ion-item (click)="open('EventcheckinPage')" menuClose>Event Check-In</button>
+        <button *ngIf="(shareProvider.role == 'admin') && (!isApp)" ion-item (click)="open('EventsmgmgPage')" menuClose>Events Management</button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+ 
+  <!-- content -->
+  <ion-nav [root]="shareProvider.curentpage" main #content></ion-nav>
+</ion-split-pane>

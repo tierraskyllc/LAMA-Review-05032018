@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-navbar>
+  	<button ion-button menuToggle>
+  		<ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      L.A.M.A. Events Management
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <table width="100%">
+    <tr width="100%">
+      <td align="left" valign="top" colspan="2" style="padding-left: 25px;">
+        <button ion-button outline (click)="presentPopover($event)">Add Event</button>
+      </td>
+    </tr>
+    <tr width="100%">
+      <td align="center" valign="top" colspan="2">
+        <div>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-12 col-sm-6 col-md-4 col-xl-3>
+                <div style="border-radius: 30px !important; border: 3px solid #FAFAFA; padding: 10px;">
+                  <table width="100%">
+                    <tr>
+                      <td colspan="2">
+                        <div class="image-container" [style.background-image]="'url(https://i.pinimg.com/736x/fc/58/ab/fc58aba1873f6338aa5bacca4b8597f4.jpg)'">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="30%">
+                        <img src="./assets/imgs/edit.png" style="max-width: 25px; max-height: 25px;">
+                        <img src="./assets/imgs/delete.png" style="max-width: 25px; max-height: 25px;">
+                      </td>
+                      <td width="70%" valign="middle" align="left" style="vertical-align: middle; text-align: left;">
+                        Saturday, April 1, 2:15 PM
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" align="center" valign="middle">
+                        <div style="height: 2.4em; overflow: hidden; font-weight: bold;">
+                          Beginner Bikers' MeetUp 
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </ion-col>
+              <ion-col col-12 col-sm-6 col-md-4 col-xl-3>
+                <div style="border-radius: 30px !important; border: 3px solid #FAFAFA; padding: 10px;">
+                  <table width="100%">
+                    <tr>
+                      <td colspan="2">
+                        <div class="image-container" [style.background-image]="'url(https://i.pinimg.com/736x/fc/58/ab/fc58aba1873f6338aa5bacca4b8597f4.jpg)'">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="25%">
+                        <img src="./assets/imgs/edit.png" style="max-width: 25px; max-height: 25px;">
+                        <img src="./assets/imgs/delete.png" style="max-width: 25px; max-height: 25px;">
+                      </td>
+                      <td width="75%" valign="middle" align="left" style="vertical-align: middle; text-align: left;">
+                        Wednesday, April 8, 1:30 PM
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" align="center" valign="middle">
+                        <div style="height: 2.4em; overflow: hidden; font-weight: bold;">
+                          Experienced Bikers' MeetUp 
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </ion-col>
+              <ion-col col-12 col-sm-6 col-md-4 col-xl-3>
+                <div style="border-radius: 30px !important; border: 3px solid #FAFAFA; padding: 10px;">
+                  <table width="100%">
+                    <tr>
+                      <td colspan="2">
+                        <div class="image-container" [style.background-image]="'url(https://i.pinimg.com/736x/fc/58/ab/fc58aba1873f6338aa5bacca4b8597f4.jpg)'">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="25%">
+                        <img src="./assets/imgs/edit.png" style="max-width: 25px; max-height: 25px;">
+                        <img src="./assets/imgs/delete.png" style="max-width: 25px; max-height: 25px;">
+                      </td>
+                      <td width="75%" valign="middle" align="left" style="vertical-align: middle; text-align: left;">
+                        Friday, April 21, 1:30 PM
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" align="center" valign="middle">
+                        <div style="height: 2.4em; overflow: hidden; font-weight: bold;">
+                          Expert Bikers' MeetUp 
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </td>
+    </tr>
+  </table>
+</ion-content>

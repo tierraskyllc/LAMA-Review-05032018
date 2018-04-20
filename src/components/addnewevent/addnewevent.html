@@ -1,0 +1,178 @@
+
+  <table width="100%" height="100%">
+    <tr width="100%" height="100%">
+      <td width="100%" height="100%" align="center">
+        <div class="container">
+          <ion-card-content text-wrap>
+	      	  <form [formGroup]="addEventForm">
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-12 col-sm-12 col-md-6 col-xl-4>
+                    <h5>EVENT DETAILS</h5>
+                    <ion-label class="invalidmsg">{{data.error}}</ion-label>
+                  	<ion-item [class.invalid]="!addEventForm.controls.title.valid && (addEventForm.controls.title.dirty || submitAttempt)">
+                      <ion-label fixed>Event Title</ion-label>
+                      <ion-input formControlName="title" type="text"></ion-input>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.title.valid  && (addEventForm.controls.title.dirty || submitAttempt)">Please enter title for this event.</p>
+
+                    <ion-item [class.invalid]="!addEventForm.controls.desc.valid && (addEventForm.controls.desc.dirty || submitAttempt)">
+                      <ion-label fixed>Event Description</ion-label>
+                      <ion-input formControlName="desc" type="text"></ion-input>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.desc.valid  && (addEventForm.controls.desc.dirty || submitAttempt)">Please enter description for this event.</p>
+
+                    <ion-item [class.invalid]="!addEventForm.controls.date.valid && (addEventForm.controls.date.dirty || submitAttempt)">
+                      <ion-label fixed>Event Date</ion-label>
+                      <!--ion-input formControlName="title" type="text"></ion-input-->
+                      <ion-datetime formControlName="date" displayFormat="MM/DD/YYYY"></ion-datetime>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.date.valid  && (addEventForm.controls.date.dirty || submitAttempt)">Please enter date for this event.</p>
+
+                    <ion-item [class.invalid]="!addEventForm.controls.time.valid && (addEventForm.controls.time.dirty || submitAttempt)">
+                      <ion-label fixed>Event Time</ion-label>
+                      <!--ion-input formControlName="title" type="text"></ion-input-->
+                      <ion-datetime formControlName="time" displayFormat="h:m:a"></ion-datetime>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.time.valid  && (addEventForm.controls.time.dirty || submitAttempt)">Please enter time for this event.</p>
+                  </ion-col>
+
+                  <ion-col col-12 col-sm-12 col-md-6 col-xl-4>
+                    <h5>VENUE</h5>
+                    <ion-item [class.invalid]="!addEventForm.controls.vstreet.valid && (addEventForm.controls.vstreet.dirty || submitAttempt)">
+                      <ion-label fixed>Street</ion-label>
+                      <ion-input formControlName="vstreet" type="text"></ion-input>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vstreet.valid  && (addEventForm.controls.vstreet.dirty || submitAttempt)">Please enter street.</p>
+
+                    <ion-item [class.invalid]="!addEventForm.controls.vapt.valid && (addEventForm.controls.vapt.dirty || submitAttempt)">
+                      <ion-label fixed>Apt/Unit</ion-label>
+                      <ion-input formControlName="vapt" type="text"></ion-input>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vapt.valid  && (addEventForm.controls.vapt.dirty || submitAttempt)">Please enter apt/unit.</p>
+
+                    <ion-item [class.invalid]="!addEventForm.controls.vcity.valid && (addEventForm.controls.vcity.dirty || submitAttempt)">
+                      <ion-label fixed>City</ion-label>
+                      <ion-input formControlName="vcity" type="text"></ion-input>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vcity.valid  && (addEventForm.controls.vcity.dirty || submitAttempt)">Please enter city.</p>
+
+                    <ion-item [class.invalid]="!addEventForm.controls.vstate.valid && (addEventForm.controls.vstate.dirty || submitAttempt)">
+                      <ion-label fixed>State</ion-label>
+                      <ion-input formControlName="vstate" type="text"></ion-input>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vstate.valid  && (addEventForm.controls.vstate.dirty || submitAttempt)">Please enter state.</p>
+
+                    <ion-item [class.invalid]="!addEventForm.controls.vzipcode.valid && (addEventForm.controls.vzipcode.dirty || submitAttempt)">
+                      <ion-label fixed>Zip Code</ion-label>
+                      <ion-input formControlName="vzipcode" type="text"></ion-input>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vzipcode.valid  && (addEventForm.controls.vzipcode.dirty || submitAttempt)">Please enter zip code.</p>
+
+                    <ion-item [class.invalid]="!addEventForm.controls.vcountry.valid && (addEventForm.controls.vcountry.dirty || submitAttempt)">
+                      <ion-label fixed>Country</ion-label>
+                      <ion-input formControlName="vcountry" type="text"></ion-input>
+                    </ion-item>
+                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vcountry.valid  && (addEventForm.controls.vcountry.dirty || submitAttempt)">Please enter Country.</p>
+                  </ion-col>
+
+                  <ion-col col-12 col-sm-12 col-md-6 col-xl-4>
+                    <h5>TARGET AUDIANCE</h5>
+                    <ion-list radio-group formControlName="selection" padding-top no-lines>
+                      <table>
+                        <tr>
+                          <td>
+                            <ion-item padding-right>
+                              <ion-label>USA</ion-label>
+                              <ion-radio padding-right value="usa" (click)="selectUSA()"></ion-radio>
+                            </ion-item>
+                          </td>
+                          <td>
+                            <ion-item>
+                              <ion-label>International</ion-label>
+                              <ion-radio value="international" (click)="selectInternational()"></ion-radio>
+                            </ion-item>
+                          </td>
+                        </tr>
+                      </table>
+                      <p class="invalidmsg" class="invalidmsg" *ngIf="(submitAttempt && !addEventForm.controls.selection.valid)">Select USA or International.</p>
+                    </ion-list>
+
+                    <div id="usainfo" *ngIf="data.usaSelected">
+                        <ion-list>
+                            <ion-item [class.invalid]="!addEventForm.controls.region.valid && (addEventForm.controls.region.dirty || submitAttempt)">
+                              <ion-label>Region</ion-label>
+                              <ion-select formControlName="region" interface=popover>
+                                  <ion-option (ionSelect)="populateUSAStatesByRegion()" *ngFor="let curregion of data.usaregions" [value]="curregion.id">{{curregion.name}}</ion-option>
+                              </ion-select>
+                            </ion-item>
+                            <p class="invalidmsg" *ngIf="!addEventForm.controls.region.valid && (addEventForm.controls.region.dirty || submitAttempt)">Please select Region.</p>
+                            <ion-item [class.invalid]="!addEventForm.controls.state.valid && (addEventForm.controls.state.dirty || submitAttempt)">
+                              <ion-label>State</ion-label>
+                              <ion-select formControlName="state" interface=popover>
+                                  <ion-option (ionSelect)="populateUSAChaptersByState()" *ngFor="let curstate of data.usastates" [value]="curstate.id">{{curstate.name}}</ion-option>
+                              </ion-select>
+                            </ion-item>
+                            <p class="invalidmsg" *ngIf="!addEventForm.controls.state.valid && (addEventForm.controls.state.dirty || submitAttempt)">Please select State.</p>
+                            <ion-item [class.invalid]="!addEventForm.controls.chapter.valid && (addEventForm.controls.chapter.dirty || submitAttempt)">
+                              <ion-label>Chapter</ion-label>
+                              <ion-select formControlName="chapter" interface=popover>
+                                  <ion-option *ngFor="let curchap of data.usachapters" [value]="curchap.id">{{curchap.name}}</ion-option>
+                              </ion-select>
+                            </ion-item>
+                            <p class="invalidmsg" *ngIf="!addEventForm.controls.chapter.valid && (addEventForm.controls.chapter.dirty || submitAttempt)">Please select Chapter.</p>
+                        </ion-list>
+                      </div>
+
+                      <div id="intlinfo" *ngIf="data.intlSelected">
+                        <ion-list>
+                          <ion-item [class.invalid]="!addEventForm.controls.country.valid && (addEventForm.controls.country.dirty || submitAttempt)">
+                            <ion-label>Country</ion-label>
+                            <ion-select formControlName="country" interface=popover>
+                              <ion-option (ionSelect)="populateIntlChaptersByReg()" *ngFor="let curcountry of data.countries" [value]="curcountry.id">{{curcountry.name}}</ion-option>
+                            </ion-select>
+                          </ion-item>
+                          <p class="invalidmsg" *ngIf="!addEventForm.controls.country.valid && (addEventForm.controls.country.dirty || submitAttempt)">Please select Country.</p>
+                          <ion-item [class.invalid]="!addEventForm.controls.intlchapter.valid && (addEventForm.controls.intlchapter.dirty || submitAttempt)">
+                            <ion-label>Chapter</ion-label>
+                            <ion-select formControlName="intlchapter" interface=popover>
+                              <ion-option *ngFor="let curintlchap of data.intlchapters" [value]="curintlchap.id">{{curintlchap.name}}</ion-option>
+                            </ion-select>
+                          </ion-item>
+                          <p class="invalidmsg" *ngIf="!addEventForm.controls.intlchapter.valid && (addEventForm.controls.intlchapter.dirty || submitAttempt)">Please select Chapter.</p>
+                        </ion-list>
+                      </div>
+                  </ion-col>
+
+                  <ion-col col-12 col-sm-12 col-md-6 col-xl-4>
+                    <h5>UPLOAD PHOTO</h5>
+                    <ion-item [class.invalid]="!addEventForm.controls.imagefile.valid && (addEventForm.controls.imagefile.dirty || submitAttempt)">
+                      <!--ion-label fixed>Photo:</ion-label-->
+                      <input formControlName="imagefile" type="file" accept="image/*" (change)="changeListener($event)">
+                    </ion-item>
+                    <!--p class="invalidmsg" *ngIf="!addEventForm.controls.imagefile.valid  && (addEventForm.controls.imagefile.dirty || submitAttempt)">Please browse and select photo.</p-->
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-12>
+                    <table>
+                      <tr>
+                        <td>
+                          <button ion-button small round (click)="canceladdevent()">Cancel</button>
+                        </td>
+                        <td>
+                          <button ion-button small round (click)="addnewevent()">Add Event</button>
+                        </td>
+                      </tr>
+                    </table>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+         	  </form>
+            {{data.response}}
+            {{addEventForm.controls['imagefile'].value}}
+         </ion-card-content>
+        </div>
+      </td>
+    </tr>
+  </table>

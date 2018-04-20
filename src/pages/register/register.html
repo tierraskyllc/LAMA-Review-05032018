@@ -1,0 +1,138 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+  	<button ion-button menuToggle>
+  		<ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <table width="100%" height="100%">
+    <tr width="100%" height="100%">
+      <td width="100%" height="100%" align="center">
+        <div class="container">
+          <ion-card-content>
+	         <form [formGroup]="signUpForm">
+                <ion-label class="invalidmsg">{{data.error}}</ion-label>
+            		<ion-item [class.invalid]="!signUpForm.controls.firstname.valid && (signUpForm.controls.firstname.dirty || submitAttempt)">
+                      <ion-label fixed>First Name</ion-label>
+                      <ion-input formControlName="firstname" type="text"></ion-input>
+                  </ion-item>
+                  <!--p class="invalidmsg" *ngIf="!signUpForm.controls.firstname.valid  && (signUpForm.controls.firstname.dirty || submitAttempt)">Please enter a valid First Name.</p-->
+                  <ion-item [class.invalid]="!signUpForm.controls.lastname.valid && (signUpForm.controls.lastname.dirty || submitAttempt)">
+                      <ion-label fixed>Last Name</ion-label>
+                      <ion-input formControlName="lastname" type="text"></ion-input>
+                  </ion-item>
+                  <!--p class="invalidmsg" *ngIf="!signUpForm.controls.lastname.valid  && (signUpForm.controls.lastname.dirty || submitAttempt)">Please enter a valid Last Name.</p-->
+                  <ion-item [class.invalid]="!signUpForm.controls.username.valid && (signUpForm.controls.username.dirty || submitAttempt)">
+                      <ion-label fixed>Email</ion-label>
+                      <ion-input formControlName="username" type="text"></ion-input>
+                  </ion-item>
+                  <!--p class="invalidmsg" *ngIf="!signUpForm.controls.username.valid  && (signUpForm.controls.username.dirty || submitAttempt)">Please enter a valid Email Address.</p-->
+                  <ion-item [class.invalid]="!signUpForm.controls.password.valid && (signUpForm.controls.password.dirty || submitAttempt)">
+                      <ion-label fixed>Password</ion-label>
+                      <ion-input formControlName="password" type="password"></ion-input>
+                  </ion-item>
+                  <!--p class="invalidmsg" *ngIf="!signUpForm.controls.password.valid  && (signUpForm.controls.password.dirty || submitAttempt)">Please enter a valid Password.</p-->
+                  <ion-item [class.invalid]="((signUpForm.controls.confirmpasswd.dirty) && !(signUpForm.controls.password.value === signUpForm.controls.confirmpasswd.value))">
+                      <ion-label>Confirm Password</ion-label>
+                      <ion-input formControlName="confirmpasswd" type="password"></ion-input>
+                  </ion-item>
+                  <!--p class="invalidmsg" *ngIf="((!(signUpForm.controls.password.value === signUpForm.controls.confirmpasswd.value)) && (signUpForm.controls.confirmpasswd.dirty || submitAttempt))">Both the passwords you provided must be same.</p-->
+                  <ion-list radio-group formControlName="selection" padding-top no-lines>
+              		<table>
+                			<tr>
+                  			<td>
+                    				<ion-item padding-right>
+                      				<ion-label padding-left>USA</ion-label>
+                      				<ion-radio padding-right value="usa" (click)="selectUSA()"></ion-radio>
+                    				</ion-item>
+                  			</td>
+                  			<td>
+                    				<ion-item>
+                      				<ion-label>International</ion-label>
+                      				<ion-radio value="international" (click)="selectInternational()"></ion-radio>
+                    				</ion-item>
+                  			</td>
+                			</tr>
+              		</table>
+                  <p class="invalidmsg" class="invalidmsg" *ngIf="(submitAttempt && !signUpForm.controls.selection.valid)">Are you signing up for a USA chapter or an International chapter?</p>
+            		</ion-list>
+            		<div id="usainfo" *ngIf="data.usaSelected">
+              		<ion-list>
+                			<ion-item [class.invalid]="!signUpForm.controls.region.valid && (signUpForm.controls.region.dirty || submitAttempt)">
+                  			<ion-label>Region</ion-label>
+                  			<ion-select formControlName="region" interface=popover>
+                    				<ion-option (ionSelect)="populateUSAStatesByRegion()" *ngFor="let curregion of data.usaregions" [value]="curregion.id">{{curregion.name}}</ion-option>
+                  			</ion-select>
+                			</ion-item>
+                      <!--p class="invalidmsg" *ngIf="!signUpForm.controls.region.valid && (signUpForm.controls.region.dirty || submitAttempt)">Please select Region.</p-->
+                			<ion-item [class.invalid]="!signUpForm.controls.state.valid && (signUpForm.controls.state.dirty || submitAttempt)">
+                  			<ion-label>State</ion-label>
+                  			<ion-select formControlName="state" interface=popover>
+                    				<ion-option (ionSelect)="populateUSAChaptersByState()" *ngFor="let curstate of data.usastates" [value]="curstate.id">{{curstate.name}}</ion-option>
+                  			</ion-select>
+                			</ion-item>
+                      <!--p class="invalidmsg" *ngIf="!signUpForm.controls.state.valid && (signUpForm.controls.state.dirty || submitAttempt)">Please select State.</p-->
+                			<ion-item [class.invalid]="!signUpForm.controls.chapter.valid && (signUpForm.controls.chapter.dirty || submitAttempt)">
+                  			<ion-label>Chapter</ion-label>
+                  			<ion-select formControlName="chapter" interface=popover>
+                    				<ion-option *ngFor="let curchap of data.usachapters" [value]="curchap.id">{{curchap.name}}</ion-option>
+                  			</ion-select>
+                			</ion-item>
+                      <!--p class="invalidmsg" *ngIf="!signUpForm.controls.chapter.valid && (signUpForm.controls.chapter.dirty || submitAttempt)">Please select Chapter.</p-->
+              		</ion-list>
+            		</div>
+            		<div id="intlinfo" *ngIf="data.intlSelected">
+              		<ion-list>
+                    <ion-item [class.invalid]="!signUpForm.controls.country.valid && (signUpForm.controls.country.dirty || submitAttempt)">
+                      <ion-label>Country</ion-label>
+                      <ion-select formControlName="country" interface=popover>
+                        <ion-option (ionSelect)="populateIntlChaptersByReg()" *ngFor="let curcountry of data.countries" [value]="curcountry.id">{{curcountry.name}}</ion-option>
+                      </ion-select>
+                    </ion-item>
+                    <!--p class="invalidmsg" *ngIf="!signUpForm.controls.country.valid && (signUpForm.controls.country.dirty || submitAttempt)">Please select Country.</p-->
+                    <ion-item [class.invalid]="!signUpForm.controls.intlchapter.valid && (signUpForm.controls.intlchapter.dirty || submitAttempt)">
+                      <ion-label>Chapter</ion-label>
+                      <ion-select formControlName="intlchapter" interface=popover>
+                        <ion-option *ngFor="let curintlchap of data.intlchapters" [value]="curintlchap.id">{{curintlchap.name}}</ion-option>
+                      </ion-select>
+                    </ion-item>
+                    <!--p class="invalidmsg" *ngIf="!signUpForm.controls.intlchapter.valid && (signUpForm.controls.intlchapter.dirty || submitAttempt)">Please select Chapter.</p-->
+                  </ion-list>
+            		</div>
+                <table width="100%">
+                  <tr width="100%">
+                    <td width="100%" align="center">
+                      <button ion-button small round (click)="submit()">Sign UP</button>
+                    </td>
+                  </tr>
+                </table>
+          	</form>
+          	<!--First Name: {{signUpForm.controls['firstname'].value}}<br>
+          	Last Name: {{signUpForm.controls['lastname'].value}}<br>
+          	Email Address: {{signUpForm.controls['username'].value}}<br>
+          	Password: {{signUpForm.controls['password'].value}}<br>
+          	Confirm Password: {{signUpForm.controls['confirmpasswd'].value}}<br>
+          	Selection: {{signUpForm.controls['selection'].value}}<br>
+          	Region: {{signUpForm.controls['region'].value}}<br>
+          	State: {{signUpForm.controls['state'].value}}<br>
+          	Chapter: {{signUpForm.controls['chapter'].value}}<br>
+            {{data.response}}
+            Is form valid?: {{signUpForm.valid}}-->
+          </ion-card-content>
+        </div>
+      </td>
+    </tr>
+  </table>
+</ion-content>

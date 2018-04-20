@@ -1,0 +1,27 @@
+addnewevent {
+	
+	.invalid {
+    	border: 1px solid #ea6153;
+        border-radius: 15px !important;
+    }
+
+    .invalidmsg {
+    	color: #ea6153;
+    }
+
+    div.container {
+    	display: table-cell;
+    	vertical-align: middle;
+        padding: 5px;
+    }
+
+    ion-card-content {
+        border-radius: 30px !important;
+        border: 3px solid #FAFAFA;
+    }
+
+    .item input {
+        border: 2px solid #E3E3E3;
+    }
+
+}
