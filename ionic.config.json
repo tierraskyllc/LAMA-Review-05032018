@@ -1,6 +1,6 @@
 {
   "name": "LAMA",
-  "app_id": "",
+  "app_id": "9c92eda8",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
