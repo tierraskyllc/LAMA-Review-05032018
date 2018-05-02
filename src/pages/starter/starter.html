@@ -32,12 +32,14 @@
                       <ion-input formControlName="username" type="text"></ion-input>
                   </ion-item>
                   <!--p class="invalidmsg" *ngIf="!signUpForm.controls.username.valid  && (signUpForm.controls.username.dirty || submitAttempt)">Please enter a valid Email Address.</p-->
+                  
                   <ion-item [class.invalid]="!signInForm.controls.password.valid && (signInForm.controls.password.dirty || submitAttempt)">
                       <ion-label fixed>Password</ion-label>
                       <ion-input formControlName="password" type="password"></ion-input>
                   </ion-item>
                   <!--p class="invalidmsg" *ngIf="!signUpForm.controls.password.valid  && (signUpForm.controls.password.dirty || submitAttempt)">Please enter a valid Password.</p-->
-                <table width="100%">
+                
+                  <table width="100%">
                   <tr width="100%">
                     <td width="100%" align="center">
                       <button ion-button small round (click)="login()">Sign In</button>

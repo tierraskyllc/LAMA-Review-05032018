@@ -11,6 +11,8 @@
         <button ion-item (click)="open('AboutPage')" menuClose>About LAMA</button>
         <button ion-item (click)="open('StarterPage')" menuClose>Login</button>
         <button ion-item (click)="open('RegisterPage')" menuClose>Sign Up</button>
+        <button ion-item (click)="open('ApplicationPage')" menuClose>Application</button>
+        <button ion-item (click)="open('TestPage')" menuClose>test</button>
         <button ion-item (click)="open('EventsPage')" menuClose>Events</button>
         <button *ngIf="shareProvider.role == 'admin'" ion-item (click)="open('EventcheckinPage')" menuClose>Event Check-In</button>
         <button *ngIf="(shareProvider.role == 'admin') && (!isApp)" ion-item (click)="open('EventsmgmgPage')" menuClose>Events Management</button>

@@ -23,7 +23,13 @@ export class StarterPage {
   signInForm: FormGroup;
   submitAttempt: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, private http: Http,  private shareProvider: ShareProvider) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public formBuilder: FormBuilder,
+    private http: Http,
+    private shareProvider: ShareProvider)
+    {
     this.data.response = '';
     this.data.error = '';
 

@@ -25702,6 +25702,34 @@ addnewevent .item input {
   border: 2px solid #E3E3E3;
 }
 
+page-application .error-message {
+  color: red;
+}
+
+page-application .invalid {
+  border: 1px solid #ea6153;
+  border-radius: 15px !important;
+}
+
+page-application .invalidmsg {
+  color: #ea6153;
+}
+
+page-application div.container {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+page-application ion-card-content {
+  border-radius: 30px !important;
+  border: 3px solid #FAFAFA;
+}
+
+page-application .item input {
+  border: 2px solid #E3E3E3;
+}
+
 page-eventsmgmg .image-container {
   background-size: cover;
   min-height: 200px;

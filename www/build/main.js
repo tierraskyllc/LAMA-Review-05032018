@@ -1,4 +1,4 @@
-webpackJsonp([12],{
+webpackJsonp([14],{
 
 /***/ 167:
 /***/ (function(module, exports) {
@@ -23,51 +23,59 @@ webpackEmptyAsyncContext.id = 167;
 var map = {
 	"../pages/about/about.module": [
 		706,
-		11
+		13
+	],
+	"../pages/application/application.module": [
+		707,
+		0
 	],
 	"../pages/dashboard/dashboard.module": [
-		707,
-		10
+		708,
+		12
 	],
 	"../pages/eventcheckin/eventcheckin.module": [
-		708,
-		9
+		709,
+		11
 	],
 	"../pages/events/events.module": [
-		709,
-		8
+		710,
+		10
 	],
 	"../pages/eventsmgmg/eventsmgmg.module": [
-		710,
-		7
+		711,
+		9
 	],
 	"../pages/login/login.module": [
-		711,
-		6
+		712,
+		8
 	],
 	"../pages/profile/profile.module": [
-		712,
-		5
+		713,
+		7
 	],
 	"../pages/register/register.module": [
-		713,
-		4
+		714,
+		6
 	],
 	"../pages/signup/signup.module": [
-		714,
-		3
+		715,
+		5
 	],
 	"../pages/signupconfirmation/signupconfirmation.module": [
-		715,
-		2
+		716,
+		4
 	],
 	"../pages/signupsuccess/signupsuccess.module": [
-		716,
-		1
+		717,
+		3
 	],
 	"../pages/starter/starter.module": [
-		717,
-		0
+		718,
+		2
+	],
+	"../pages/test/test.module": [
+		719,
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -117,8 +125,8 @@ var HomePage = (function () {
         this.shareProvider.curentpage = pageName;
     };
     HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/home/home.html"*/'<ion-split-pane>\n  <!-- side menu  -->\n  <ion-menu [content]="content">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <button ion-item (click)="open(\'AboutPage\')" menuClose>About LAMA</button>\n        <button ion-item (click)="open(\'StarterPage\')" menuClose>Login</button>\n        <button ion-item (click)="open(\'RegisterPage\')" menuClose>Sign Up</button>\n        <button ion-item (click)="open(\'EventsPage\')" menuClose>Events</button>\n        <button *ngIf="shareProvider.role == \'admin\'" ion-item (click)="open(\'EventcheckinPage\')" menuClose>Event Check-In</button>\n        <button *ngIf="(shareProvider.role == \'admin\') && (!isApp)" ion-item (click)="open(\'EventsmgmgPage\')" menuClose>Events Management</button>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n \n  <!-- content -->\n  <ion-nav [root]="shareProvider.curentpage" main #content></ion-nav>\n</ion-split-pane>\n'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/home/home.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-home',template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/home/home.html"*/'<ion-split-pane>\n  <!-- side menu  -->\n  <ion-menu [content]="content">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <button ion-item (click)="open(\'AboutPage\')" menuClose>About LAMA</button>\n        <button ion-item (click)="open(\'StarterPage\')" menuClose>Login</button>\n        <button ion-item (click)="open(\'RegisterPage\')" menuClose>Sign Up</button>\n        <button ion-item (click)="open(\'ApplicationPage\')" menuClose>Application</button>\n        <button ion-item (click)="open(\'TestPage\')" menuClose>test</button>\n        <button ion-item (click)="open(\'EventsPage\')" menuClose>Events</button>\n        <button *ngIf="shareProvider.role == \'admin\'" ion-item (click)="open(\'EventcheckinPage\')" menuClose>Event Check-In</button>\n        <button *ngIf="(shareProvider.role == \'admin\') && (!isApp)" ion-item (click)="open(\'EventsmgmgPage\')" menuClose>Events Management</button>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n \n  <!-- content -->\n  <ion-nav [root]="shareProvider.curentpage" main #content></ion-nav>\n</ion-split-pane>\n'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_share_share__["a" /* ShareProvider */]])
     ], HomePage);
@@ -136,7 +144,7 @@ var HomePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddneweventComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__(352);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__);
@@ -175,28 +183,28 @@ var AddneweventComponent = (function () {
         this.data.response = '';
         this.data.error = '';
         this.addEventForm = formBuilder.group({
-            date: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
-            time: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
-            title: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(50)])],
-            desc: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(200)])],
+            date: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required])],
+            time: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required])],
+            title: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(50)])],
+            desc: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(200)])],
             // Venue (street, apt/unit, city, state, zipcode, country) //
-            vstreet: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(200)])],
-            vapt: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(20)])],
-            vcity: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(100)])],
-            vstate: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(100)])],
-            vzipcode: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(10)])],
-            vcountry: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].maxLength(100)])],
+            vstreet: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(200)])],
+            vapt: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(20)])],
+            vcity: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(100)])],
+            vstate: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(100)])],
+            vzipcode: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(10)])],
+            vcountry: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(100)])],
             // ============================ //
             // Focus on this audiance/group //
-            selection: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
-            region: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
-            state: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)])],
-            city: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)])],
-            chapter: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)])],
-            country: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
-            intlchapter: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])],
+            selection: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required])],
+            region: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required])],
+            state: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)])],
+            city: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)])],
+            chapter: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)])],
+            country: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required])],
+            intlchapter: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required])],
             // ==== End ==== //
-            imagefile: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required])]
+            imagefile: ['', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].compose([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required])]
         });
     }
     AddneweventComponent.prototype.selectUSA = function () {
@@ -206,19 +214,19 @@ var AddneweventComponent = (function () {
         this.addEventForm.get('country').updateValueAndValidity();
         this.addEventForm.get('intlchapter').setValidators([]);
         this.addEventForm.get('intlchapter').updateValueAndValidity();
-        this.addEventForm.get('region').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('region').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('region').updateValueAndValidity();
-        this.addEventForm.get('state').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)]);
+        this.addEventForm.get('state').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)]);
         this.addEventForm.get('state').updateValueAndValidity();
-        this.addEventForm.get('chapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)]);
+        this.addEventForm.get('chapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)]);
         this.addEventForm.get('chapter').updateValueAndValidity();
     };
     AddneweventComponent.prototype.selectInternational = function () {
         this.data.intlSelected = true;
         this.data.usaSelected = false;
-        this.addEventForm.get('country').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('country').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('country').updateValueAndValidity();
-        this.addEventForm.get('intlchapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('intlchapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('intlchapter').updateValueAndValidity();
         this.addEventForm.get('region').setValidators([]);
         this.addEventForm.get('region').updateValueAndValidity();
@@ -247,11 +255,11 @@ var AddneweventComponent = (function () {
         this.addEventForm.get('country').updateValueAndValidity();
         this.addEventForm.get('intlchapter').setValidators([]);
         this.addEventForm.get('intlchapter').updateValueAndValidity();
-        this.addEventForm.get('region').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('region').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('region').updateValueAndValidity();
-        this.addEventForm.get('state').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)]);
+        this.addEventForm.get('state').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)]);
         this.addEventForm.get('state').updateValueAndValidity();
-        this.addEventForm.get('chapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)]);
+        this.addEventForm.get('chapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)]);
         this.addEventForm.get('chapter').updateValueAndValidity();
     };
     AddneweventComponent.prototype.populateUSAStatesByRegion = function () {
@@ -275,11 +283,11 @@ var AddneweventComponent = (function () {
         this.addEventForm.get('country').updateValueAndValidity();
         this.addEventForm.get('intlchapter').setValidators([]);
         this.addEventForm.get('intlchapter').updateValueAndValidity();
-        this.addEventForm.get('region').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('region').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('region').updateValueAndValidity();
-        this.addEventForm.get('state').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)]);
+        this.addEventForm.get('state').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)]);
         this.addEventForm.get('state').updateValueAndValidity();
-        this.addEventForm.get('chapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)]);
+        this.addEventForm.get('chapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)]);
         this.addEventForm.get('chapter').updateValueAndValidity();
     };
     AddneweventComponent.prototype.populateUSAChaptersByState = function () {
@@ -302,11 +310,11 @@ var AddneweventComponent = (function () {
         this.addEventForm.get('country').updateValueAndValidity();
         this.addEventForm.get('intlchapter').setValidators([]);
         this.addEventForm.get('intlchapter').updateValueAndValidity();
-        this.addEventForm.get('region').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('region').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('region').updateValueAndValidity();
-        this.addEventForm.get('state').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)]);
+        this.addEventForm.get('state').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)]);
         this.addEventForm.get('state').updateValueAndValidity();
-        this.addEventForm.get('chapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].minLength(1)]);
+        this.addEventForm.get('chapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(1)]);
         this.addEventForm.get('chapter').updateValueAndValidity();
     };
     AddneweventComponent.prototype.populateCountries = function () {
@@ -326,9 +334,9 @@ var AddneweventComponent = (function () {
         }, function (error) {
             console.log("Oooops!");
         });
-        this.addEventForm.get('country').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('country').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('country').updateValueAndValidity();
-        this.addEventForm.get('intlchapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('intlchapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('intlchapter').updateValueAndValidity();
         this.addEventForm.get('region').setValidators([]);
         this.addEventForm.get('region').updateValueAndValidity();
@@ -353,9 +361,9 @@ var AddneweventComponent = (function () {
         }, function (error) {
             console.log("Oooops!");
         });
-        this.addEventForm.get('country').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('country').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('country').updateValueAndValidity();
-        this.addEventForm.get('intlchapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* Validators */].required]);
+        this.addEventForm.get('intlchapter').setValidators([__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required]);
         this.addEventForm.get('intlchapter').updateValueAndValidity();
         this.addEventForm.get('region').setValidators([]);
         this.addEventForm.get('region').updateValueAndValidity();
@@ -384,10 +392,10 @@ var AddneweventComponent = (function () {
         });
     };
     AddneweventComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'addnewevent',template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/components/addnewevent/addnewevent.html"*/'\n  <table width="100%" height="100%">\n    <tr width="100%" height="100%">\n      <td width="100%" height="100%" align="center">\n        <div class="container">\n          <ion-card-content text-wrap>\n	      	  <form [formGroup]="addEventForm">\n              <ion-grid>\n                <ion-row>\n                  <ion-col col-12 col-sm-12 col-md-6 col-xl-4>\n                    <h5>EVENT DETAILS</h5>\n                    <ion-label class="invalidmsg">{{data.error}}</ion-label>\n                  	<ion-item [class.invalid]="!addEventForm.controls.title.valid && (addEventForm.controls.title.dirty || submitAttempt)">\n                      <ion-label fixed>Event Title</ion-label>\n                      <ion-input formControlName="title" type="text"></ion-input>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.title.valid  && (addEventForm.controls.title.dirty || submitAttempt)">Please enter title for this event.</p>\n\n                    <ion-item [class.invalid]="!addEventForm.controls.desc.valid && (addEventForm.controls.desc.dirty || submitAttempt)">\n                      <ion-label fixed>Event Description</ion-label>\n                      <ion-input formControlName="desc" type="text"></ion-input>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.desc.valid  && (addEventForm.controls.desc.dirty || submitAttempt)">Please enter description for this event.</p>\n\n                    <ion-item [class.invalid]="!addEventForm.controls.date.valid && (addEventForm.controls.date.dirty || submitAttempt)">\n                      <ion-label fixed>Event Date</ion-label>\n                      <!--ion-input formControlName="title" type="text"></ion-input-->\n                      <ion-datetime formControlName="date" displayFormat="MM/DD/YYYY"></ion-datetime>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.date.valid  && (addEventForm.controls.date.dirty || submitAttempt)">Please enter date for this event.</p>\n\n                    <ion-item [class.invalid]="!addEventForm.controls.time.valid && (addEventForm.controls.time.dirty || submitAttempt)">\n                      <ion-label fixed>Event Time</ion-label>\n                      <!--ion-input formControlName="title" type="text"></ion-input-->\n                      <ion-datetime formControlName="time" displayFormat="h:m:a"></ion-datetime>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.time.valid  && (addEventForm.controls.time.dirty || submitAttempt)">Please enter time for this event.</p>\n                  </ion-col>\n\n                  <ion-col col-12 col-sm-12 col-md-6 col-xl-4>\n                    <h5>VENUE</h5>\n                    <ion-item [class.invalid]="!addEventForm.controls.vstreet.valid && (addEventForm.controls.vstreet.dirty || submitAttempt)">\n                      <ion-label fixed>Street</ion-label>\n                      <ion-input formControlName="vstreet" type="text"></ion-input>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vstreet.valid  && (addEventForm.controls.vstreet.dirty || submitAttempt)">Please enter street.</p>\n\n                    <ion-item [class.invalid]="!addEventForm.controls.vapt.valid && (addEventForm.controls.vapt.dirty || submitAttempt)">\n                      <ion-label fixed>Apt/Unit</ion-label>\n                      <ion-input formControlName="vapt" type="text"></ion-input>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vapt.valid  && (addEventForm.controls.vapt.dirty || submitAttempt)">Please enter apt/unit.</p>\n\n                    <ion-item [class.invalid]="!addEventForm.controls.vcity.valid && (addEventForm.controls.vcity.dirty || submitAttempt)">\n                      <ion-label fixed>City</ion-label>\n                      <ion-input formControlName="vcity" type="text"></ion-input>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vcity.valid  && (addEventForm.controls.vcity.dirty || submitAttempt)">Please enter city.</p>\n\n                    <ion-item [class.invalid]="!addEventForm.controls.vstate.valid && (addEventForm.controls.vstate.dirty || submitAttempt)">\n                      <ion-label fixed>State</ion-label>\n                      <ion-input formControlName="vstate" type="text"></ion-input>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vstate.valid  && (addEventForm.controls.vstate.dirty || submitAttempt)">Please enter state.</p>\n\n                    <ion-item [class.invalid]="!addEventForm.controls.vzipcode.valid && (addEventForm.controls.vzipcode.dirty || submitAttempt)">\n                      <ion-label fixed>Zip Code</ion-label>\n                      <ion-input formControlName="vzipcode" type="text"></ion-input>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vzipcode.valid  && (addEventForm.controls.vzipcode.dirty || submitAttempt)">Please enter zip code.</p>\n\n                    <ion-item [class.invalid]="!addEventForm.controls.vcountry.valid && (addEventForm.controls.vcountry.dirty || submitAttempt)">\n                      <ion-label fixed>Country</ion-label>\n                      <ion-input formControlName="vcountry" type="text"></ion-input>\n                    </ion-item>\n                    <p class="invalidmsg" *ngIf="!addEventForm.controls.vcountry.valid  && (addEventForm.controls.vcountry.dirty || submitAttempt)">Please enter Country.</p>\n                  </ion-col>\n\n                  <ion-col col-12 col-sm-12 col-md-6 col-xl-4>\n                    <h5>TARGET AUDIANCE</h5>\n                    <ion-list radio-group formControlName="selection" padding-top no-lines>\n                      <table>\n                        <tr>\n                          <td>\n                            <ion-item padding-right>\n                              <ion-label>USA</ion-label>\n                              <ion-radio padding-right value="usa" (click)="selectUSA()"></ion-radio>\n                            </ion-item>\n                          </td>\n                          <td>\n                            <ion-item>\n                              <ion-label>International</ion-label>\n                              <ion-radio value="international" (click)="selectInternational()"></ion-radio>\n                            </ion-item>\n                          </td>\n                        </tr>\n                      </table>\n                      <p class="invalidmsg" class="invalidmsg" *ngIf="(submitAttempt && !addEventForm.controls.selection.valid)">Select USA or International.</p>\n                    </ion-list>\n\n                    <div id="usainfo" *ngIf="data.usaSelected">\n                        <ion-list>\n                            <ion-item [class.invalid]="!addEventForm.controls.region.valid && (addEventForm.controls.region.dirty || submitAttempt)">\n                              <ion-label>Region</ion-label>\n                              <ion-select formControlName="region" interface=popover>\n                                  <ion-option (ionSelect)="populateUSAStatesByRegion()" *ngFor="let curregion of data.usaregions" [value]="curregion.id">{{curregion.name}}</ion-option>\n                              </ion-select>\n                            </ion-item>\n                            <p class="invalidmsg" *ngIf="!addEventForm.controls.region.valid && (addEventForm.controls.region.dirty || submitAttempt)">Please select Region.</p>\n                            <ion-item [class.invalid]="!addEventForm.controls.state.valid && (addEventForm.controls.state.dirty || submitAttempt)">\n                              <ion-label>State</ion-label>\n                              <ion-select formControlName="state" interface=popover>\n                                  <ion-option (ionSelect)="populateUSAChaptersByState()" *ngFor="let curstate of data.usastates" [value]="curstate.id">{{curstate.name}}</ion-option>\n                              </ion-select>\n                            </ion-item>\n                            <p class="invalidmsg" *ngIf="!addEventForm.controls.state.valid && (addEventForm.controls.state.dirty || submitAttempt)">Please select State.</p>\n                            <ion-item [class.invalid]="!addEventForm.controls.chapter.valid && (addEventForm.controls.chapter.dirty || submitAttempt)">\n                              <ion-label>Chapter</ion-label>\n                              <ion-select formControlName="chapter" interface=popover>\n                                  <ion-option *ngFor="let curchap of data.usachapters" [value]="curchap.id">{{curchap.name}}</ion-option>\n                              </ion-select>\n                            </ion-item>\n                            <p class="invalidmsg" *ngIf="!addEventForm.controls.chapter.valid && (addEventForm.controls.chapter.dirty || submitAttempt)">Please select Chapter.</p>\n                        </ion-list>\n                      </div>\n\n                      <div id="intlinfo" *ngIf="data.intlSelected">\n                        <ion-list>\n                          <ion-item [class.invalid]="!addEventForm.controls.country.valid && (addEventForm.controls.country.dirty || submitAttempt)">\n                            <ion-label>Country</ion-label>\n                            <ion-select formControlName="country" interface=popover>\n                              <ion-option (ionSelect)="populateIntlChaptersByReg()" *ngFor="let curcountry of data.countries" [value]="curcountry.id">{{curcountry.name}}</ion-option>\n                            </ion-select>\n                          </ion-item>\n                          <p class="invalidmsg" *ngIf="!addEventForm.controls.country.valid && (addEventForm.controls.country.dirty || submitAttempt)">Please select Country.</p>\n                          <ion-item [class.invalid]="!addEventForm.controls.intlchapter.valid && (addEventForm.controls.intlchapter.dirty || submitAttempt)">\n                            <ion-label>Chapter</ion-label>\n                            <ion-select formControlName="intlchapter" interface=popover>\n                              <ion-option *ngFor="let curintlchap of data.intlchapters" [value]="curintlchap.id">{{curintlchap.name}}</ion-option>\n                            </ion-select>\n                          </ion-item>\n                          <p class="invalidmsg" *ngIf="!addEventForm.controls.intlchapter.valid && (addEventForm.controls.intlchapter.dirty || submitAttempt)">Please select Chapter.</p>\n                        </ion-list>\n                      </div>\n                  </ion-col>\n\n                  <ion-col col-12 col-sm-12 col-md-6 col-xl-4>\n                    <h5>UPLOAD PHOTO</h5>\n                    <ion-item [class.invalid]="!addEventForm.controls.imagefile.valid && (addEventForm.controls.imagefile.dirty || submitAttempt)">\n                      <!--ion-label fixed>Photo:</ion-label-->\n                      <input formControlName="imagefile" type="file" accept="image/*" (change)="changeListener($event)">\n                    </ion-item>\n                    <!--p class="invalidmsg" *ngIf="!addEventForm.controls.imagefile.valid  && (addEventForm.controls.imagefile.dirty || submitAttempt)">Please browse and select photo.</p-->\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col col-12>\n                    <table>\n                      <tr>\n                        <td>\n                          <button ion-button small round (click)="canceladdevent()">Cancel</button>\n                        </td>\n                        <td>\n                          <button ion-button small round (click)="addnewevent()">Add Event</button>\n                        </td>\n                      </tr>\n                    </table>\n                  </ion-col>\n                </ion-row>\n              </ion-grid>\n         	  </form>\n            {{data.response}}\n            {{addEventForm.controls[\'imagefile\'].value}}\n         </ion-card-content>\n        </div>\n      </td>\n    </tr>\n  </table>\n'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/components/addnewevent/addnewevent.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_5__providers_share_share__["a" /* ShareProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormBuilder"], __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_5__providers_share_share__["a" /* ShareProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */]])
     ], AddneweventComponent);
     return AddneweventComponent;
 }());
@@ -428,6 +436,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_share_share__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_addnewevent_addnewevent__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__angular_forms__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -447,11 +456,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
@@ -459,9 +469,11 @@ var AppModule = (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_13__angular_forms__["ReactiveFormsModule"],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/application/application.module#ApplicationPageModule', name: 'ApplicationPage', segment: 'application', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/eventcheckin/eventcheckin.module#EventcheckinPageModule', name: 'EventcheckinPage', segment: 'eventcheckin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/events/events.module#EventsPageModule', name: 'EventsPage', segment: 'events', priority: 'low', defaultHistory: [] },
@@ -472,12 +484,13 @@ var AppModule = (function () {
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signupconfirmation/signupconfirmation.module#SignupconfirmationPageModule', name: 'SignupconfirmationPage', segment: 'signupconfirmation', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signupsuccess/signupsuccess.module#SignupsuccessPageModule', name: 'SignupsuccessPage', segment: 'signupsuccess', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/starter/starter.module#StarterPageModule', name: 'StarterPage', segment: 'starter', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/starter/starter.module#StarterPageModule', name: 'StarterPage', segment: 'starter', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/test/test.module#TestPageModule', name: 'TestPage', segment: 'test', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_8_angular2_qrcode__["a" /* QRCodeModule */],
-                __WEBPACK_IMPORTED_MODULE_6_ngx_qrcode2__["a" /* NgxQRCodeModule */]
+                __WEBPACK_IMPORTED_MODULE_6_ngx_qrcode2__["a" /* NgxQRCodeModule */],
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
@@ -489,7 +502,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
                 __WEBPACK_IMPORTED_MODULE_11__providers_share_share__["a" /* ShareProvider */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
                 __WEBPACK_IMPORTED_MODULE_6_ngx_qrcode2__["a" /* NgxQRCodeModule */],
                 __WEBPACK_IMPORTED_MODULE_7__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]
             ]
@@ -518,12 +531,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-/*
-  Generated class for the ShareProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 var ShareProvider = (function () {
     function ShareProvider() {
         //splitpaneviewnav:any = {}
@@ -547,7 +554,7 @@ var ShareProvider = (function () {
         this.lastname = "";
     }
     ShareProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [])
     ], ShareProvider);
     return ShareProvider;
@@ -594,7 +601,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/app/app.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/app/app.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_5__providers_share_share__["a" /* ShareProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])

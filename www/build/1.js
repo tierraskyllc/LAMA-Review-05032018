@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 716:
+/***/ 719:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupsuccessPageModule", function() { return SignupsuccessPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestPageModule", function() { return TestPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signupsuccess__ = __webpack_require__(728);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__test__ = __webpack_require__(739);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SignupsuccessPageModule = (function () {
-    function SignupsuccessPageModule() {
+var TestPageModule = (function () {
+    function TestPageModule() {
     }
-    SignupsuccessPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+    TestPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__signupsuccess__["a" /* SignupsuccessPage */],
+                __WEBPACK_IMPORTED_MODULE_2__test__["a" /* TestPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__signupsuccess__["a" /* SignupsuccessPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__test__["a" /* TestPage */]),
             ],
         })
-    ], SignupsuccessPageModule);
-    return SignupsuccessPageModule;
+    ], TestPageModule);
+    return TestPageModule;
 }());
 
-//# sourceMappingURL=signupsuccess.module.js.map
+//# sourceMappingURL=test.module.js.map
 
 /***/ }),
 
-/***/ 728:
+/***/ 739:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupsuccessPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_share_share__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,34 +58,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the SignupsuccessPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var SignupsuccessPage = (function () {
-    function SignupsuccessPage(navCtrl, navParams, shareProvider) {
+var TestPage = (function () {
+    function TestPage(navCtrl, fb) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.shareProvider = shareProvider;
+        this.fb = fb;
+        this.validations_form = this.fb.group({
+            motorcycles: this.fb.array([
+                this.getInitialMotorcycle()
+            ])
+        });
     }
-    SignupsuccessPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad SignupsuccessPage');
+    TestPage.prototype.getInitialMotorcycle = function () {
+        return this.fb.group({
+            color: [''],
+            year: [''],
+            make: [''],
+            model: [''],
+            currentMileage: [''],
+        });
     };
-    SignupsuccessPage.prototype.login = function () {
-        this.shareProvider.curentpage = 'StarterPage';
+    TestPage.prototype.addMotorcycle = function () {
+        var control = this.validations_form.controls['motorcycles'];
+        control.push(this.getInitialMotorcycle());
     };
-    SignupsuccessPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-signupsuccess',template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/signupsuccess/signupsuccess.html"*/'<!--\n  Generated template for the SignupPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n  	<button ion-button menuToggle>\n  		<ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Sign Up</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <table width="100%" height="100%">\n    <tr width="100%" height="100%">\n      <td width="100%" height="100%" align="center">\n        <div class="container">\n          <ion-card-content>\n	           <p class="highlightedmsg">Thank you for creating your account with L.A.M.A.  Please click the confirmation link sent to you via email.</p><button ion-button clear (click)="login()">CLICK HERE</button><p class="highlightedmsg"> to log in to your accont.</p>\n          </ion-card-content>\n        </div>\n      </td>\n    </tr>\n  </table>\n</ion-content>'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/signupsuccess/signupsuccess.html"*/,
+    TestPage.prototype.removeMotorcycle = function (i) {
+        var control = this.validations_form.controls['motorcycles'];
+        control.removeAt(i);
+    };
+    TestPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'test-page',template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/test/test.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Test Page\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-card-content>\n      <ion-card-header>Motorcycle Information</ion-card-header>\n    <form [formGroup]="validations_form">\n      <!-- Add Motorcycle Information -->\n      <ion-list>\n        <ion-list formArrayName="motorcycles" no-lines>\n          <div *ngFor="let validations_form of validations_form.controls.motorcycles.controls; let i=index">\n            <div [formGroupName]="i">\n              <ion-card-header>Motorcycle #{{ i + 1 }}\n                <ion-buttons end>\n                  <button ion-button outline (click)="removeMotorcycle(i)" color="danger" type="button"><ion-icon name="trash"></ion-icon></button>\n                </ion-buttons>\n              </ion-card-header>\n              <ion-item>\n                <ion-input type="text" formControlName="color" required placeholder="Black"></ion-input>\n              </ion-item>\n              <ion-item>\n                <ion-input type="text" formControlName="year" required placeholder="1999"></ion-input>\n              </ion-item>\n              <ion-item>\n                <ion-input type="text" formControlName="make" required placeholder="Honda"></ion-input>\n              </ion-item>\n              <ion-item>\n                <ion-input type="text" formControlName="model" required placeholder="Goldwing"></ion-input>\n              </ion-item>\n              <ion-item>\n                <ion-input type="number" formControlName="currentMileage" placeholder="Current Mileage"></ion-input>\n              </ion-item>\n            </div>\n          </div>\n          <button ion-button small (click)="addMotorcycle()" color="dark" type="button">Add Motorcycle</button>\n        </ion-list>\n      </ion-list>\n\n    </form>\n  </ion-card-content>\n</ion-content>'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/test/test.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_share_share__["a" /* ShareProvider */]])
-    ], SignupsuccessPage);
-    return SignupsuccessPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormBuilder"]])
+    ], TestPage);
+    return TestPage;
 }());
 
-//# sourceMappingURL=signupsuccess.js.map
+//# sourceMappingURL=test.js.map
 
 /***/ })
 

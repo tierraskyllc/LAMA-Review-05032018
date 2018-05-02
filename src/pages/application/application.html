@@ -1,0 +1,391 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>New Member Application</ion-title>
+    <ion-buttons end>
+      <button>Export to PDF </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<p *ngIf="submitAttempt" style="color: #fc1d05;">Please fill out all details accurately.</p>
+
+<ion-content>
+  <table width="100%" height="100%">
+    <tr width="100%" height="100%">
+      <td width="100%" height="100%" align="center">
+        <div class="container">
+          <ion-card-content>
+
+            <form [formGroup]="validations_form">
+              <ion-card-content>
+                <ion-card-header>Main Information</ion-card-header>
+                <p>...First Name, Last Name, Email are provided from the Server...</p>
+                <div>
+                  <ion-item>
+                    <ion-label fixed>Address</ion-label>
+                    <ion-input type="text" formControlName="address"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.address">
+                    <div class="error-message" *ngIf="validations_form.get('address').hasError(validation.type) && (validations_form.get('address').dirty || validations_form.get('address').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed>City</ion-label>
+                    <ion-input type="text" formControlName="city"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.city">
+                    <div class="error-message" *ngIf="validations_form.get('city').hasError(validation.type) && (validations_form.get('city').dirty || validations_form.get('city').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed>State</ion-label>
+                    <ion-input type="text" formControlName="state"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.state">
+                    <div class="error-message" *ngIf="validations_form.get('state').hasError(validation.type) && (validations_form.get('state').dirty || validations_form.get('state').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed>Zip Code</ion-label>
+                    <ion-input type="text" formControlName="zipCode"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.zipCode">
+                    <div class="error-message" *ngIf="validations_form.get('zipCode').hasError(validation.type) && (validations_form.get('zipCode').dirty || validations_form.get('zipCode').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div formGroupName="country_phone">
+                  <ion-item>
+                    <ion-label fixed>Country & Phone</ion-label>
+                    <ion-select formControlName="country" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let item of countries" [value]="item">{{item.name}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                  <ion-item>
+                    <ion-input [textMask]="{mask: validations_form.value.country_phone.country.phone_mask}" placeholder="{{ validations_form.value.country_phone.country.sample_phone }}"
+                      type="text" formControlName="phone"></ion-input>
+                  </ion-item>
+                  <div class="validation-errors">
+                    <ng-container *ngFor="let validation of validation_messages.phone">
+                      <div class="error-message" *ngIf="validations_form.get('country_phone').get('phone').hasError(validation.type) && (validations_form.get('country_phone').get('phone').dirty || validations_form.get('country_phone').get('phone').touched)">
+                        {{ validation.message }}
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed>Gender</ion-label>
+                    <ion-select formControlName="gender" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let gender of genders" [value]="gender">{{ gender }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.gender">
+                    <div class="error-message" *ngIf="!(validations_form.get('gender').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Age</ion-label>
+                    <ion-input formControlName="age" type="number"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.age">
+                    <div class="error-message" *ngIf="validations_form.get('age').hasError(validation.type) && (validations_form.get('age').dirty || validations_form.get('age').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed>Date of Birth</ion-label>
+                    <ion-datetime></ion-datetime>
+                  </ion-item>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Place of Birth</ion-label>
+                    <ion-input type="text" formControlName="placeOfBirth"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.placeOfBirth">
+                    <div class="error-message" *ngIf="validations_form.get('placeOfBirth').hasError(validation.type) && (validations_form.get('placeOfBirth').dirty || validations_form.get('placeOfBirth').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </ion-card-content>
+
+              <ion-card-content>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">License?</ion-label>
+                    <ion-select formControlName="haveMotorcycleLicense" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let haveMotorcycleLicense of yesOrNo" [value]="haveMotorcycleLicense">{{ haveMotorcycleLicense }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Years Riding</ion-label>
+                    <ion-input formControlName="yearsRiding" type="number"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.yearsRiding">
+                    <div class="error-message" *ngIf="validations_form.get('yearsRiding').hasError(validation.type) && (validations_form.get('yearsRiding').dirty || validations_form.get('yearsRiding').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </ion-card-content>
+<!-- Add Motorcycle Information -->
+              <ion-card-content>
+                <ion-card-header>Motorcycle Information</ion-card-header><hr>
+                <ion-list>
+                  <ion-list formArrayName="motorcycles" no-lines>
+                    <div *ngFor="let validations_form of validations_form.controls.motorcycles.controls; let i=index">
+                      <div [formGroupName]="i">
+                        <ion-card-header>Motorcycle #{{ i + 1 }}
+                          <ion-buttons end>
+                            <button ion-button outline (click)="removeMotorcycle(i)" color="danger" type="button">
+                              <ion-icon name="trash"></ion-icon>
+                            </button>
+                          </ion-buttons>
+                        </ion-card-header>
+                        <table>
+                            <tr>
+                              <td>
+                                <ion-item>
+                                  <ion-label>Year</ion-label>
+                                  <ion-input type="text" formControlName="year" required placeholder="1999"></ion-input>
+                                </ion-item>
+                              </td>
+                              <td>
+                                <ion-item>
+                                  <ion-label>Color</ion-label>
+                                  <ion-input type="text" formControlName="color" required placeholder="Black"></ion-input>
+                                </ion-item>
+                              </td>
+                            </tr>
+                          </table>
+                        <ion-item>
+                          <ion-input type="text" formControlName="make" required placeholder="Honda"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                          <ion-input type="text" formControlName="model" required placeholder="Goldwing"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input type="text" formControlName="licensePlate" required placeholder="TYF-832"></ion-input>
+                          </ion-item>
+                        <ion-item>
+                          <ion-input type="number" formControlName="currentMileage" placeholder="Current Mileage"></ion-input>
+                        </ion-item>
+                      </div>
+                    </div>
+                    <button ion-button small (click)="addMotorcycle()" color="dark" type="button">Add Motorcycle</button>
+                  </ion-list>
+                </ion-list>
+<!-- Add Motorcycle Information -->
+              </ion-card-content>
+              <ion-card-content>
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Other Club?</ion-label>
+                    <ion-select formControlName="anyOtherClub" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let anyOtherClub of yesOrNo" [value]="anyOtherClub">{{ anyOtherClub }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Name of other Club</ion-label>
+                    <ion-input type="text" formControlName="nameOfOtherClub"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.nameOfOtherClub">
+                    <div class="error-message" *ngIf="validations_form.get('nameOfOtherClub').hasError(validation.type) && (validations_form.get('nameOfOtherClub').dirty || validations_form.get('nameOfOtherClub').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+              </ion-card-content>
+
+              <ion-card-content>
+                <h6>Personal Info. . .</h6>
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Marital Status</ion-label>
+                    <ion-select formControlName="maritalStatus" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let maritalStatus of maritalStatus" [value]="maritalStatus">{{ maritalStatus }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">How many children?</ion-label>
+                    <ion-input formControlName="numberOfChildren" type="number"></ion-input>
+                  </ion-item>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Employer</ion-label>
+                    <ion-input type="text" formControlName="nameOfEmployer"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.nameOfEmployer">
+                    <div class="error-message" *ngIf="validations_form.get('nameOfEmployer').hasError(validation.type) && (validations_form.get('nameOfEmployer').dirty || validations_form.get('nameOfEmployer').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Years Employed</ion-label>
+                    <ion-input formControlName="yearsEmployed" type="number"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.yearsEmployed">
+                    <div class="error-message" *ngIf="validations_form.get('yearsEmployed').hasError(validation.type) && (validations_form.get('yearsEmployed').dirty || validations_form.get('yearsEmployed').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Occupation</ion-label>
+                    <ion-input type="text" formControlName="occupation"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.occupation">
+                    <div class="error-message" *ngIf="validations_form.get('occupation').hasError(validation.type) && (validations_form.get('occupation').dirty || validations_form.get('occupation').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Annual Salary</ion-label>
+                    <ion-select formControlName="annualSalary" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let annualSalary of annualSalary" [value]="annualSalary">{{ annualSalary }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Highest Education</ion-label>
+                    <ion-select formControlName="highestEducation" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let highestEducation of highestEducation" [value]="highestEducation">{{ highestEducation }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+
+              </ion-card-content>
+              <ion-card>
+                <h6>Misc Info. . .</h6>
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Skills & Pastimes</ion-label>
+                    <ion-input type="text" formControlName="skillsPastimes"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.skillsPastimes">
+                    <div class="error-message" *ngIf="validations_form.get('skillsPastimes').hasError(validation.type) && (validations_form.get('skillsPastimes').dirty || validations_form.get('skillsPastimes').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Blood Type</ion-label>
+                    <ion-select formControlName="bloodType" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let bloodType of bloodTypes" [value]="bloodType">{{ bloodType }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Allergies</ion-label>
+                    <ion-input type="text" formControlName="allergies"></ion-input>
+                  </ion-item>
+                  <ng-container *ngFor="let validation of validation_messages.allergies">
+                    <div class="error-message" *ngIf="validations_form.get('allergies').hasError(validation.type) && (validations_form.get('allergies').dirty || validations_form.get('allergies').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Organ donor</ion-label>
+                    <ion-select formControlName="organDonar" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let organDonar of yesOrNo" [value]="organDonar">{{ organDonar }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+
+                <!-- <h6>Misc Info. . .</h6> START -->
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Member's Title</ion-label>
+                    <ion-select formControlName="memberTitle" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let memberTitle of memberTitles" [value]="memberTitle">{{ memberTitle }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Type of Membership</ion-label>
+                    <ion-select formControlName="typeOfMembership" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let typeOfMembership of typeOfMemberships" [value]="typeOfMembership">{{ typeOfMembership }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+
+                <div>
+                  <ion-item>
+                    <ion-label fixed color="primary">Type of typeOfChapter</ion-label>
+                    <ion-select formControlName="typeOfChapter" cancelText="Cancel" okText="OK">
+                      <ion-option *ngFor="let typeOfChapter of typeOfChapters" [value]="typeOfChapter">{{ typeOfChapter }}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </div>
+              </ion-card>
+              <!-- <ion-item>
+          <ion-label fixed>Bio</ion-label>
+          <ion-textarea formControlName="bio"></ion-textarea>
+          </ion-item> -->
+
+            </form>
+
+            <button ion-button full color="primary" (click)="save()">Create Account!</button>
+
+          </ion-card-content>
+        </div>
+      </td>
+    </tr>
+  </table>
+</ion-content>

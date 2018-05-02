@@ -1,16 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 712:
+/***/ 715:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupPageModule", function() { return SignupPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(724);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_qrcode__ = __webpack_require__(355);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_qrcode2__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__signup__ = __webpack_require__(735);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,40 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-
-var ProfilePageModule = (function () {
-    function ProfilePageModule() {
+var SignupPageModule = (function () {
+    function SignupPageModule() {
     }
-    ProfilePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+    SignupPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_2__signup__["a" /* SignupPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
-                __WEBPACK_IMPORTED_MODULE_3_angular2_qrcode__["a" /* QRCodeModule */],
-                __WEBPACK_IMPORTED_MODULE_4_ngx_qrcode2__["a" /* NgxQRCodeModule */]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__signup__["a" /* SignupPage */]),
             ],
         })
-    ], ProfilePageModule);
-    return ProfilePageModule;
+    ], SignupPageModule);
+    return SignupPageModule;
 }());
 
-//# sourceMappingURL=profile.module.js.map
+//# sourceMappingURL=signup.module.js.map
 
 /***/ }),
 
-/***/ 724:
+/***/ 735:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(352);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_share_share__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_share_share__ = __webpack_require__(63);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,40 +60,148 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-// import { Http } from '@angular/http';
 
 
-// import { NgxQRCodeModule } from 'ngx-qrcode2';
-// import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-// import { QRCodeModule } from 'angular2-qrcode';
+
 /**
- * Generated class for the ProfilePage page.
+ * Generated class for the SignupPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ProfilePage = (function () {
-    // from the below constructor I am removing private http: Http, and private barcodeScanner: BarcodeScanner, private ngxQRCodeModule: NgxQRCodeModule//
-    function ProfilePage(navCtrl, navParams, shareProvider) {
+var SignupPage = (function () {
+    function SignupPage(navCtrl, navParams, http, shareProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.http = http;
         this.shareProvider = shareProvider;
-        this.createdCode = null;
-        this.createdCode = '{username":"' + this.shareProvider.username + '", "firstname":"' + this.shareProvider.firstname + '" , "lastname":"' + this.shareProvider.lastname + '"}';
+        this.data = {};
+        this.data.username = '';
+        this.data.firstname = '';
+        this.data.lastname = '';
+        this.data.password = '';
+        this.data.confirmpswd = '';
+        this.data.selection = '';
+        this.data.region = 0;
+        this.data.state = 0;
+        this.data.chapter = 0;
+        this.data.usaSelected = false;
+        this.data.intlSelected = false;
+        this.data.usaregions = [];
+        this.data.usastates = [];
+        this.data.usachapters = [];
+        this.data.response = '';
+        this.data.error = '';
+        this.http = http;
     }
-    ProfilePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ProfilePage');
+    SignupPage.prototype.ionViewDidLoad = function () {
+        this.populateUSARegions();
+        console.log('ionViewDidLoad SignupPage');
     };
-    ProfilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/profile/profile.html"*/'<ion-header>\n  <ion-navbar>\n  	<button ion-button menuToggle>\n  		<ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      L.A.M.A. Profile\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <table width="100%">\n    <tr width="100%">\n      <td align="center" valign="top" colspan="2">\n        <h4>FirstName LastName</h4>\n      </td>\n    </tr>\n    <tr width="100%">\n      <td align="center" valign="top" colspan="2">\n        Membership Status<br>(Active/Expired/Revoked)\n      </td>\n    </tr>\n    <tr style="height: 3em;">\n      <td>\n      </td>\n    </tr>\n    <tr width="100%">\n      <td valign="top" width="50%" align="right">\n        <div><img src="https://dd5394a0b8ca8e97ba29-abf76f3d91a2125517d6c7c409f095c7.ssl.cf1.rackcdn.com/content/common/Models/2018/cc28348a-ba9d-4415-be78-e2710c61cbd2.png"\></div>\n      </td>\n      <td valign="top" width="50%" align="left">\n        <div>\n          <!--img src="https://i.ytimg.com/vi/Q6xybdaV3xs/maxresdefault.jpg"\-->\n          <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>\n          <!--jquery(\'#qrcode\').qrcode("this plugin is great");-->\n          <qr-code [value]="\'All QR Code data goes here!\'" [size]="150"></qr-code>\n        </div>\n      </td>\n    </tr>\n  </table>\n</ion-content>\n'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/profile/profile.html"*/,
+    SignupPage.prototype.selectUSA = function () {
+        this.data.usaSelected = true;
+        this.data.intlSelected = false;
+    };
+    SignupPage.prototype.selectInternational = function () {
+        this.data.intlSelected = true;
+        this.data.usaSelected = false;
+    };
+    SignupPage.prototype.submit = function () {
+        var _this = this;
+        var body = new FormData();
+        var json_encoded_response = '';
+        var decoded_response = {
+            username: '',
+            firstname: '',
+            lastname: '',
+            sessionid: ''
+        };
+        body.append('sessionid', this.shareProvider.sessionid);
+        body.append('username', this.data.username);
+        body.append('firstname', this.data.firstname);
+        body.append('lastname', this.data.lastname);
+        body.append('password', this.data.password);
+        body.append('confirmpswd', this.data.confirmpswd);
+        body.append('selection', this.data.selection);
+        body.append('region', this.data.region);
+        body.append('state', this.data.state);
+        this.http.post(this.shareProvider.server + 'signup/signup.php', body)
+            .subscribe(function (data) {
+            json_encoded_response = data["_body"];
+            _this.data.response = json_encoded_response;
+            decoded_response = JSON.parse(json_encoded_response);
+            _this.shareProvider.sessionid = decoded_response.sessionid;
+            _this.data.username = decoded_response.username;
+            _this.data.firstname = decoded_response.firstname;
+            _this.data.lastname = decoded_response.lastname;
+            _this.data.response = _this.shareProvider.sessionid;
+        }, function (error) {
+            _this.data.error = error;
+            console.log("Oooops!");
+        });
+    };
+    SignupPage.prototype.populateUSARegions = function () {
+        var _this = this;
+        this.data.usastates = [];
+        this.data.usachapters = [];
+        var decoded_response = '';
+        var body = new FormData();
+        this.http.post(this.shareProvider.server + 'usaregions.php', body)
+            .subscribe(function (data) {
+            decoded_response = JSON.parse(data["_body"]);
+            if (decoded_response[0]) {
+                _this.data.usaregions = decoded_response[2];
+            }
+        }, function (error) {
+            _this.data.error = error;
+            console.log("Oooops!");
+        });
+    };
+    SignupPage.prototype.populateUSAStatesByRegion = function () {
+        var _this = this;
+        this.data.usachapters = [];
+        var decoded_response = '';
+        var body = new FormData();
+        var regionid = this.data.region;
+        body.append('regionid', regionid);
+        this.http.post(this.shareProvider.server + 'usastatesbyregion.php', body)
+            .subscribe(function (data) {
+            decoded_response = JSON.parse(data["_body"]);
+            if (decoded_response[0]) {
+                _this.data.usastates = decoded_response[2];
+            }
+        }, function (error) {
+            _this.data.error = error;
+            console.log("Oooops!");
+        });
+    };
+    SignupPage.prototype.populateUSAChaptersByState = function () {
+        var _this = this;
+        var decoded_response = '';
+        var body = new FormData();
+        var stateid = this.data.state;
+        body.append('stateid', stateid);
+        this.http.post(this.shareProvider.server + 'usachaptersbystate.php', body)
+            .subscribe(function (data) {
+            decoded_response = JSON.parse(data["_body"]);
+            if (decoded_response[0]) {
+                _this.data.usachapters = decoded_response[2];
+            }
+        }, function (error) {
+            _this.data.error = error;
+            console.log("Oooops!");
+        });
+    };
+    SignupPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-signup',template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/signup/signup.html"*/'<ion-header>\n  <ion-navbar>\n  	<button ion-button menuToggle>\n  		<ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Sign Up</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  {{data.response}}\n  {{data.error}}\n  <ion-item>\n    <ion-label floating>First Name</ion-label>\n    <ion-input type="text" name="firstname" [(ngModel)]="data.firstname"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Last Name</ion-label>\n    <ion-input type="text" name="lastname" [(ngModel)]="data.lastname"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Email Address</ion-label>\n    <ion-input type="text" name="username" [(ngModel)]="data.username"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Password</ion-label>\n    <ion-input type="password" name="password" [(ngModel)]="data.password"></ion-input>\n  </ion-item>\n  <ion-item>\n    <ion-label floating>Confirm Password</ion-label>\n    <ion-input type="password" name="confirmpasswd" [(ngModel)]="data.confirmpasswd"></ion-input>\n  </ion-item>\n  <br>\n  <ion-list radio-group>\n    <table>\n      <tr>\n        <td>\n          <ion-item>\n            <ion-label>USA</ion-label>\n            <ion-radio name="selection" value="usa" (click)="selectUSA()"></ion-radio>\n          </ion-item>\n        </td>\n        <td>\n          <ion-item>\n            <ion-label>International</ion-label>\n            <ion-radio name="selection" value="international" (click)="selectInternational()"></ion-radio>\n          </ion-item>\n        </td>\n      </tr>\n    </table>\n  </ion-list>\n  <div id="usainfo" *ngIf="data.usaSelected">\n    USA Input Fields Goes Here\n    <ion-list>\n      <ion-item>\n        <ion-label>Region</ion-label>\n        <ion-select name="region" interface=popover [(ngModel)]="data.region">\n          <ion-option (ionSelect)="populateUSAStatesByRegion()" *ngFor="let curregion of data.usaregions" [value]="curregion.id">{{curregion.name}}</ion-option>\n        </ion-select>\n      </ion-item>\n      <ion-item>\n        <ion-label>State</ion-label>\n        <ion-select name="state" interface=popover [(ngModel)]="data.state">\n          <ion-option (ionSelect)="populateUSAChaptersByState()" *ngFor="let curstate of data.usastates" [value]="curstate.id">{{curstate.name}}</ion-option>\n        </ion-select>\n      </ion-item>\n      <ion-item>\n        <ion-label>Chapter</ion-label>\n        <ion-select name="chapter" interface=popover [(ngModel)]="data.chapter">\n          <ion-option *ngFor="let curchap of data.usachapters" [value]="curchap.id">{{curchap.name}}</ion-option>\n        </ion-select>\n      </ion-item>\n    </ion-list>\n  </div>\n  <div id="intlinfo" *ngIf="data.intlSelected">\n    Internation Input Fields Goes Here\n  </div>\n  <button ion-button block (click)="submit()">Signup</button>\n</ion-content>\n'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/signup/signup.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_share_share__["a" /* ShareProvider */]])
-    ], ProfilePage);
-    return ProfilePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_4__providers_share_share__["a" /* ShareProvider */]])
+    ], SignupPage);
+    return SignupPage;
 }());
 
-//# sourceMappingURL=profile.js.map
+//# sourceMappingURL=signup.js.map
 
 /***/ })
 

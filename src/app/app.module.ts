@@ -13,6 +13,9 @@ import { HomePage } from '../pages/home/home';
 import { ShareProvider } from '../providers/share/share';
 import { AddneweventComponent} from '../components/addnewevent/addnewevent';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,10 +24,12 @@ import { AddneweventComponent} from '../components/addnewevent/addnewevent';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(MyApp),
     HttpModule,
     QRCodeModule,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Test Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+      <ion-card-header>Motorcycle Information</ion-card-header>
+    <form [formGroup]="validations_form">
+      <!-- Add Motorcycle Information -->
+      <ion-list>
+        <ion-list formArrayName="motorcycles" no-lines>
+          <div *ngFor="let validations_form of validations_form.controls.motorcycles.controls; let i=index">
+            <div [formGroupName]="i">
+              <ion-card-header>Motorcycle #{{ i + 1 }}
+                <ion-buttons end>
+                  <button ion-button outline (click)="removeMotorcycle(i)" color="danger" type="button"><ion-icon name="trash"></ion-icon></button>
+                </ion-buttons>
+              </ion-card-header>
+              <ion-item>
+                <ion-input type="text" formControlName="color" required placeholder="Black"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="text" formControlName="year" required placeholder="1999"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="text" formControlName="make" required placeholder="Honda"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="text" formControlName="model" required placeholder="Goldwing"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="number" formControlName="currentMileage" placeholder="Current Mileage"></ion-input>
+              </ion-item>
+            </div>
+          </div>
+          <button ion-button small (click)="addMotorcycle()" color="dark" type="button">Add Motorcycle</button>
+        </ion-list>
+      </ion-list>
+
+    </form>
+  </ion-card-content>
+</ion-content>
