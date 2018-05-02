@@ -23,7 +23,7 @@ export class ShareProvider {
   constructor() {
   	this.curentpage = 'StarterPage';
 
-    this.server = "https://192.168.1.189/";
+    this.server = "https://lama.tierrasky.com/backend/";
     //this.connection.headers = new Headers({ 'Content-Type': 'application/json' });
 
     this.sessionid = "";
