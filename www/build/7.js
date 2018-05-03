@@ -1,6 +1,6 @@
 webpackJsonp([7],{
 
-/***/ 713:
+/***/ 712:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(733);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(732);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_qrcode__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ngx_qrcode2__ = __webpack_require__(356);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -44,7 +44,7 @@ var ProfilePageModule = (function () {
 
 /***/ }),
 
-/***/ 733:
+/***/ 732:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -91,7 +91,7 @@ var ProfilePage = (function () {
     };
     ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-profile',template:/*ion-inline-start:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/profile/profile.html"*/'<ion-header>\n  <ion-navbar>\n  	<button ion-button menuToggle>\n  		<ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      L.A.M.A. Profile\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <table width="100%">\n    <tr width="100%">\n      <td align="center" valign="top" colspan="2">\n        <h4>FirstName LastName</h4>\n      </td>\n    </tr>\n    <tr width="100%">\n      <td align="center" valign="top" colspan="2">\n        Membership Status<br>(Active/Expired/Revoked)\n      </td>\n    </tr>\n    <tr style="height: 3em;">\n      <td>\n      </td>\n    </tr>\n    <tr width="100%">\n      <td valign="top" width="50%" align="right">\n        <div><img src="https://dd5394a0b8ca8e97ba29-abf76f3d91a2125517d6c7c409f095c7.ssl.cf1.rackcdn.com/content/common/Models/2018/cc28348a-ba9d-4415-be78-e2710c61cbd2.png"\></div>\n      </td>\n      <td valign="top" width="50%" align="left">\n        <div>\n          <!--img src="https://i.ytimg.com/vi/Q6xybdaV3xs/maxresdefault.jpg"\-->\n          <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>\n          <!--jquery(\'#qrcode\').qrcode("this plugin is great");-->\n          <qr-code [value]="\'All QR Code data goes here!\'" [size]="150"></qr-code>\n        </div>\n      </td>\n    </tr>\n  </table>\n</ion-content>\n'/*ion-inline-end:"/home/ralix/TierraSky/Ionic/LAMA-copy/LAMA-copy/src/pages/profile/profile.html"*/,
+            selector: 'page-profile',template:/*ion-inline-start:"C:\Users\vkgandhi84\Projects\LAMA\Source\LAMAv1\LAMA-copy\src\pages\profile\profile.html"*/'<ion-header>\n\n  <ion-navbar>\n\n  	<button ion-button menuToggle>\n\n  		<ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>\n\n      L.A.M.A. Profile\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <table width="100%">\n\n    <tr width="100%">\n\n      <td align="center" valign="top" colspan="2">\n\n        <h4>FirstName LastName</h4>\n\n      </td>\n\n    </tr>\n\n    <tr width="100%">\n\n      <td align="center" valign="top" colspan="2">\n\n        Membership Status<br>(Active/Expired/Revoked)\n\n      </td>\n\n    </tr>\n\n    <tr style="height: 3em;">\n\n      <td>\n\n      </td>\n\n    </tr>\n\n    <tr width="100%">\n\n      <td valign="top" width="50%" align="right">\n\n        <div><img src="https://dd5394a0b8ca8e97ba29-abf76f3d91a2125517d6c7c409f095c7.ssl.cf1.rackcdn.com/content/common/Models/2018/cc28348a-ba9d-4415-be78-e2710c61cbd2.png"\></div>\n\n      </td>\n\n      <td valign="top" width="50%" align="left">\n\n        <div>\n\n          <!--img src="https://i.ytimg.com/vi/Q6xybdaV3xs/maxresdefault.jpg"\-->\n\n          <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>\n\n          <!--jquery(\'#qrcode\').qrcode("this plugin is great");-->\n\n          <qr-code [value]="\'All QR Code data goes here!\'" [size]="150"></qr-code>\n\n        </div>\n\n      </td>\n\n    </tr>\n\n  </table>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\vkgandhi84\Projects\LAMA\Source\LAMAv1\LAMA-copy\src\pages\profile\profile.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_share_share__["a" /* ShareProvider */]])
     ], ProfilePage);
