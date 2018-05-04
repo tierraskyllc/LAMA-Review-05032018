@@ -30,11 +30,11 @@ var map = {
 		0
 	],
 	"../pages/dashboard/dashboard.module": [
-		708,
+		709,
 		12
 	],
 	"../pages/eventcheckin/eventcheckin.module": [
-		709,
+		708,
 		11
 	],
 	"../pages/events/events.module": [
@@ -474,8 +474,8 @@ var AppModule = (function () {
                     links: [
                         { loadChildren: '../pages/about/about.module#AboutPageModule', name: 'AboutPage', segment: 'about', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/application/application.module#ApplicationPageModule', name: 'ApplicationPage', segment: 'application', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/eventcheckin/eventcheckin.module#EventcheckinPageModule', name: 'EventcheckinPage', segment: 'eventcheckin', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/events/events.module#EventsPageModule', name: 'EventsPage', segment: 'events', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/eventsmgmg/eventsmgmg.module#EventsmgmgPageModule', name: 'EventsmgmgPage', segment: 'eventsmgmg', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
